@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Source Code Free</title>
+    <link rel="stylesheet" type="text/css" href="aset/css/project.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="bg-video">
+            <source src="aset/video.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+    <div class="content">
+        <h1>Selamat Datang Menu Project</h1>
+        <p>Silahkan Ketik Button Di Bawah Untuk Melihat Contoh Dan Sourcodenya </p>
+        <div class="columns">
+            <div class="column" onclick="showFullscreenPopup(1)">Project 1</div>
+            <div class="column" onclick="showFullscreenPopup(2)">Project 2</div>
+            <div class="column" onclick="showFullscreenPopup(3)">Project 3</div>
+            <div class="column" onclick="showFullscreenPopup(4)">Project 4</div>
+            <div class="column" onclick="showFullscreenPopup(5)">Project 5</div>
+            <div class="column" onclick="showFullscreenPopup(6)">Project 6</div>
+            <div class="column" onclick="showFullscreenPopup(7)">Project 7</div>
+            <div class="column" onclick="showFullscreenPopup(8)">Project 8</div>
+            <div class="column" onclick="showFullscreenPopup(9)">Project 9</div>
+        </div>
+    </div>
+
+        <!--[ POP UP BUTTON PERTAMA ]-->
+    <div id="popup-1" class="fullscreen-popup">
+        <div class="popup-content">
+            <button class="close-icon" onclick="closeFullscreenPopup(1)">&#10006;</button>
+            <h2>Contoh Website Hello World</h2>
+        <div class="scroll-container" id="scroll-container">
+            <div class="scroll-item">
+                <p><b>Contoh Hasilnya Geser Untuk Melihat Source Code</b></p>
+                <center><img src="aset/image.jpg" alt="Descriptive Text" style="max-width: 40%; height: auto; border-radius: 5px;"></center>
+            </div>
+                <div class="scroll-item">
+                    <p>Kode HTML Untuk <b>index.html</b></p>
+<textarea class="code-box" id="code-1" readonly>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hello World Example</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Hello, World!</h1>
+            <button id="helloButton">Click Me!</button>
+        </div>
+    <script src="script.js"></script>
+    </body>
+</html>
+                        
+</textarea>
+                    <button class="copy-button" onclick="copyCode('code-1')">Salin Source Code</button>
+                </div>
+                <div class="scroll-item">
+                    <p>Kode Sumber 2</p>
+<textarea class="code-box" id="code-2" readonly>
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+    
+.container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}    
+h1 {
+    color: #333;
+}
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+    
+button:hover {
+    background-color: #0056b3;
+}
+
+</textarea>
+                    <button class="copy-button" onclick="copyCode('code-2')">Salin Source Code</button>
+                </div>
+                <div class="scroll-item">
+                    <p>Kode Sumber 2</p>
+<textarea class="code-box" id="code-2" readonly>
+
+document.getElementById('helloButton').addEventListener('click', function() {
+    alert('Hello, World!');
+});
+    
+
+</textarea>
+                    <button class="copy-button" onclick="copyCode('code-2')">Salin Source Code</button>
+                </div>
+            <div class="arrow-left" onclick="scrollContainer(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="arrow-right" onclick="scrollContainer(1)">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+    </div>
+        <!--[ BATAS POP UP BUTON PERTAMA ]-->
+    <script src="aset/js/project.js"></script>
+</body>
+</html>

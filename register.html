@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Register Website Rerezz Official</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://pomf2.lain.la/f/96aker7k.jpeg">
+    <link rel="icon" type="image/x-icon" href="https://pomf2.lain.la/f/96aker7k.jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="aset/css/login.css">
+</head>
+<body>
+
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="aset/video.mp4" type="video/mp4">
+            Browser Anda tidak mendukung tag video.
+        </video>
+    </div>
+
+    <!-- Kolom Register -->
+    <section class="hero-section d-flex justify-content-center align-items-center">
+        <div class="container">
+            <form class="custom-form register-form" id="registerForm" role="form" method="post">
+                <h2 class="hero-title text-center mb-4 pb-2">Register Form</h2>
+                <br>
+                <div class="form-floating mb-4 p-0">
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Full Name" required="">
+                    <label for="name">Full Name</label>
+                </div>
+
+                <div class="form-floating mb-4 p-0">
+                    <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required="">
+                    <label for="email">Email address</label>
+                </div>
+
+                <div class="form-floating mb-4 p-0">
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Password" required="">
+                    <label for="password">Password</label>
+                </div>
+
+                <div class="form-floating mb-4 p-0">
+                    <input type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="Confirm Password" required="">
+                    <label for="confirm_password">Confirm Password</label>
+                </div>
+
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-5 col-12">
+                        <button type="submit" class="form-control">Register</button>
+                    </div>
+                    <div class="col-lg-5 col-12">
+                        <a href="login.html" class="custom-btn">Login</a>
+                    </div><br>
+                    <a href="menu.html">Lewati</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <a href="https://t.me/rerez_x_hosting">
+            <p>&copy; 2024 Rerezz Official Web Developer</p>
+        </a>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+    <script src="aset/js/script.js"></script>
+
+    <!-- JavaScript untuk mengarahkan ke menu.html setelah registrasi -->
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Mencegah pengiriman form default
+            // Proses validasi pendaftaran dapat ditambahkan di sini
+            
+            // Arahkan ke halaman menu.html
+            window.location.href = "menu.html";
+        });
+    </script>
+</body>
+</html>

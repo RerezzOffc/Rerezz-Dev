@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Kami</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="aset/css/contac.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="bg-video">
+            <source src="aset/video.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+
+    <div class="content">
+        <img src="aset/profile.jpg" alt="Profile Picture" class="profile-pic">
+        
+        <div class="action-buttons">
+            <button class="action-button" onclick="showContact()">Kontak</button>
+            <button class="action-button" onclick="showSkills()">Keahlian</button>
+        </div>
+
+        <div id="contact" class="contact-buttons">
+            <button class="contact-button" onclick="window.open('https://wa.me/123456789', '_blank')">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </button>
+            <button class="contact-button" onclick="window.open('https://chat.whatsapp.com/your-group-link', '_blank')">
+                <i class="fab fa-whatsapp"></i> Grup WA
+            </button>
+            <button class="contact-button" onclick="window.open('https://wa.me/your-channel-link', '_blank')">
+                <i class="fab fa-whatsapp"></i> Saluran WA
+            </button>
+            <button class="contact-button" onclick="window.open('https://t.me/yourtelegram', '_blank')">
+                <i class="fab fa-telegram"></i> Telegram
+            </button>
+            <button class="contact-button" onclick="window.open('https://t.me/your-telegram-group', '_blank')">
+                <i class="fab fa-telegram"></i> Grup Telegram
+            </button>
+            <button class="contact-button" onclick="window.open('https://t.me/your-telegram-channel', '_blank')">
+                <i class="fab fa-telegram"></i> Saluran Telegram
+            </button>
+            <button class="contact-button" onclick="window.open('https://youtube.com/yourchannel', '_blank')">
+                <i class="fab fa-youtube"></i> YouTube
+            </button>
+            <button class="contact-button" onclick="window.open('https://instagram.com/yourprofile', '_blank')">
+                <i class="fab fa-instagram"></i> Instagram
+            </button>
+            <button class="contact-button" onclick="window.open('https://www.tiktok.com/@yourprofile', '_blank')">
+                <i class="fab fa-tiktok"></i> TikTok
+            </button>
+            <button class="contact-button" onclick="window.open('https://github.com/yourprofile', '_blank')">
+                <i class="fab fa-github"></i> GitHub
+            </button>
+            <button class="contact-button" onclick="window.open('https://saweria.co/yourprofile', '_blank')">
+                <i class="fas fa-donate"></i> Saweria
+            </button>
+        </div>
+
+        <div id="keahlian" class="skills">
+            <h3>Keahlian</h3>
+            <div class="skill-item">
+                <i class="fab fa-html5 skill-icon"></i>
+                <span>HTML</span>
+                <div class="divider"></div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 90%;"></div>
+                </div>
+                <span class="skill-percent">90%</span>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-css3-alt skill-icon"></i>
+                <span>CSS</span>
+                <div class="divider"></div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 85%;"></div>
+                </div>
+                <span class="skill-percent">85%</span>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-js skill-icon"></i>
+                <span>JavaScript</span>
+                <div class="divider"></div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 80%;"></div>
+                </div>
+                <span class="skill-percent">80%</span>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-python skill-icon"></i>
+                <span>Python</span>
+                <div class="divider"></div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 55%;"></div>
+                </div>
+                <span class="skill-percent">55%</span>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-php skill-icon"></i>
+                <span>PHP</span>
+                <div class="divider"></div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 60%;"></div>
+                </div>
+                <span class="skill-percent">60%</span>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-java skill-icon"></i>
+                <span>Java</span>
+                <div class="divider"></div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 50%;"></div>
+                </div>
+                <span class="skill-percent">50%</span>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-rust skill-icon"></i>
+                <span>Rust</span>
+                <div class="divider"></div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 15%;"></div>
+                </div>
+                <span class="skill-percent">15%</span>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-node-js skill-icon"></i>
+                <span>Node.js</span>
+                <div class="divider"></div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 65%;"></div>
+                </div>
+                <span class="skill-percent">65%</span>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-react skill-icon"></i>
+                <span>React</span>
+                <div class="divider"></div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 10%;"></div>
+                </div>
+                <span class="skill-percent">10%</span>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-angular skill-icon"></i>
+                <span>Angular</span>
+                <div class="divider"></div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 10%;"></div>
+                </div>
+                <span class="skill-percent">10%</span>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-vuejs skill-icon"></i>
+                <span>Vue.js</span>
+                <div class="divider"></div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 10%;"></div>
+                </div>
+                <span class="skill-percent">10%</span>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-git-alt skill-icon"></i>
+                <span>Git</span>
+                <div class="divider"></div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 10%;"></div>
+                </div>
+                <span class="skill-percent">10%</span>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-robot skill-icon"></i>
+                <span>AI</span>
+                <div class="divider"></div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 100%;"></div>
+                </div>
+                <span class="skill-percent">100%</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showContact() {
+            document.getElementById('contact').style.display = 'flex';
+            document.getElementById('keahlian').style.display = 'none';
+        }
+
+        function showSkills() {
+            document.getElementById('keahlian').style.display = 'block';
+            document.getElementById('contact').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

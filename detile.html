@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            color: white;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+            height: 100vh;
+            margin: 0;
+        }
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .product-title {
+            font-size: 28px;
+            margin: 30px 0 10px; /* Menambahkan margin atas */
+        }
+        .product-description {
+            font-size: 18px;
+            margin: 10px 0 20px; /* Menambahkan margin atas */
+        }
+        .detail-columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .detail-column {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 1);
+            border-radius: 10px;
+            padding: 10px;
+            width: 90%;
+            max-width: 200px;
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .detail-column:hover {
+            transform: scale(1.05);
+        }
+        img {
+            width: 80%;
+            height: auto;
+            border-radius: 10px;
+        }
+        h3 {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .price {
+            font-size: 14px;
+            color: white;
+            margin: 5px 0;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px;
+            background-color: rgba(255, 255, 1);
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            z-index: 1;
+        }
+        .back-button:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="aset/video.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()">Kembali</button>
+
+        <div id="product-details"></div>
+
+        <div class="detail-columns" id="detail-columns">
+            <!-- Dynamic product details will be injected here -->
+        </div>
+    </div>
+
+    <script>
+        const products = {
+            cloud: {
+                title: "Cloud Digital Ocean",
+                description: "Akun Cloud Digital Ocean dengan 3 Drop.",
+                price: "IDR Rp 150.000",
+                image: "https://pomf2.lain.la/f/6amo2lm.png"
+            },
+            vps: {
+                title: "VPS Ubuntu",
+                description: "VPS dengan sistem operasi Ubuntu.",
+                price: "IDR Rp 200.000",
+                image: "https://pomf2.lain.la/f/qf9pb22g.jpg"
+            },
+            panel: {
+                title: "Panel Petrodacryl",
+                description: "Panel untuk keperluan manajemen server.",
+                price: "IDR Rp 100.000",
+                image: "https://pomf2.lain.la/f/qf9pb22g.jpg"
+            }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('product');
+        const product = products[productId];
+
+        if (product) {
+            document.getElementById('product-details').innerHTML = `
+                <div class="product-title">${product.title}</div>
+                <div class="product-description">${product.description}</div>
+            `;
+
+            const detailColumns = document.getElementById('detail-columns');
+            if (productId === 'cloud') {
+                detailColumns.innerHTML = `
+                    <div class="detail-column">
+                        <img src="https://pomf2.lain.la/f/6amo2lm.png" alt="3 DROP STANDAR QUALITY">
+                        <h3>3 DROP STANDAR QUALITY</h3>
+                        <p class="price">IDR Rp 50.000</p>
+                    </div>
+                    <div class="detail-column">
+                        <img src="https://pomf2.lain.la/f/6amo2lm.png" alt="3 DROP HIGH QUALITY">
+                        <h3>3 DROP HIGH QUALITY</h3>
+                        <p class="price">IDR Rp 75.000</p>
+                    </div>
+                    <div class="detail-column">
+                        <img src="https://pomf2.lain.la/f/6amo2lm.png" alt="10 DROP STANDAR QUALITY">
+                        <h3>10 DROP STANDAR QUALITY</h3>
+                        <p class="price">IDR Rp 150.000</p>
+                    </div>
+                    <div class="detail-column">
+                        <img src="https://pomf2.lain.la/f/6amo2lm.png" alt="10 DROP HIGH QUALITY">
+                        <h3>10 DROP HIGH QUALITY</h3>
+                        <p class="price">IDR Rp 200.000</p>
+                    </div>
+                `;
+            } else {
+                for (let i = 0; i < 4; i++) {
+                    detailColumns.innerHTML += `
+                        <div class="detail-column">
+                            <img src="${product.image}" alt="${product.title}">
+                            <h3>${product.title}</h3>
+                            <p class="price">${product.price}</p>
+                            <p>${product.description}</p>
+                        </div>
+                    `;
+                }
+            }
+        } else {
+            document.getElementById('product-details').innerText = "Produk tidak ditemukan.";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rerezz Official Web Developer</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://pomf2.lain.la/f/96aker7k.jpeg">
+    <link rel="icon" type="image/x-icon" href="https://pomf2.lain.la/f/96aker7k.jpeg">
+    <link rel="stylesheet" type="text/css" href="aset/css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+</head>
+<body>
+
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="aset/video.mp4" type="video/mp4">
+            Browser Anda tidak mendukung tag video.
+        </video>
+    </div>
+                    <!--[ MENU UTAMA ]-->
+    <div class="menu-button" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
+            <li><a href="layanan.html"><i class="fas fa-cogs"></i> Layanan</a></li>
+            <li><a href="contac.html"><i class="fas fa-envelope"></i> Kontak</a></li>
+        </ul>
+    </div>
+            <!--[ MENU SIDEBAR 2 ]-->
+    <div class="menu-button-right" onclick="toggleSidebarRight()">
+        <i class="fas fa-user"></i>
+    </div>
+
+    <div class="sidebar-right" id="sidebarRight">
+        <ul>
+            <li><a href="login.html"><i class="fas fa-lock"></i> Login</a></li>
+            <li><a href="register.html"><i class="fas fa-user"></i> Daftar</a></li>
+            <li><a href="#"><i class="fas fa-cogs"></i> Forgot Password</a></li>
+            <li><a href="menu.html"><i class="fas fa-angle-double-right"></i> Lewati</a></li>
+        </ul>
+    </div>
+
+
+    <div class="content">
+        <h1>Selamat Datang Di Website Kami</h1>
+        <h4>Silahkan Pilih Menu DI kanan Atau Di Kiri Untuk Melihat Lainya</h4><br>
+        <div id="clock"></div>
+    </div>
+
+    <footer>
+        <a href="https://t.me/rerez_x_hosting">
+            <p>&copy; 2024 Rerezz Official Web Developer</p>
+        </a>
+    </footer>
+    
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+    <script src="aset/js/script.js"></script>
+</body>
+</html>

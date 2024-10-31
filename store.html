@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Produk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+        }
+
+        #bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-height: 100%;
+            min-width: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 1;
+            position: relative;
+        }
+
+        .store-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 1);
+            text-align: center;
+        }
+
+        .store {
+            margin-top: 20px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .store-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 1);
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+            text-decoration: none;
+            color: white;
+        }
+
+        .store-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .store-item:hover {
+            transform: scale(1.05);
+        }
+
+        .product-detail {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            width: 100%;
+            position: relative;
+        }
+
+        .detail-columns {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .detail-column {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 1);
+            border-radius: 10px;
+            padding: 10px;
+            width: 30%;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .back-button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: rgba(255, 255, 1);
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="bg-video">
+            <source src="aset/video.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+
+    <div class="content">
+        <div class="store-name">REZZ STORE</div>
+        
+        <div class="store">
+            <div class="store-item" onclick="location.href='detile.html?product=cloud'">
+                <img src="https://pomf2.lain.la/f/qf9pb22g.jpg" alt="Cloud Digital Ocean">
+                <div class="product-title">Cloud Digital Ocean</div>
+            </div>
+            <div class="store-item" onclick="location.href='detile.html?product=vps'">
+                <img src="https://pomf2.lain.la/f/qf9pb22g.jpg" alt="VPS Ubuntu">
+                <div class="product-title">VPS Ubuntu</div>
+            </div>
+            <div class="store-item" onclick="location.href='detile.html?product=panel'">
+                <img src="https://pomf2.lain.la/f/qf9pb22g.jpg" alt="Panel Petrodacryl">
+                <div class="product-title">Panel Petrodacryl</div>
+            </div>
+            <div class="store-item" onclick="location.href='detile.html?product=script'">
+                <img src="https://pomf2.lain.la/f/qf9pb22g.jpg" alt="Script Bot WhatsApp">
+                <div class="product-title">Script Bot WhatsApp</div>
+            </div>
+            <div class="store-item" onclick="location.href='detile.html?product=sewa'">
+                <img src="https://pomf2.lain.la/f/qf9pb22g.jpg" alt="Sewa Bot">
+                <div class="product-title">Sewa Bot</div>
+            </div>
+            <div class="store-item" onclick="location.href='detile.html?product=jadi'">
+                <img src="https://pomf2.lain.la/f/qf9pb22g.jpg" alt="Jadi Bot">
+                <div class="product-title">Jadi Bot</div>
+            </div>
+            <div class="store-item" onclick="location.href='detile.html?product=topup'">
+                <img src="https://pomf2.lain.la/f/qf9pb22g.jpg" alt="Top Up All Game">
+                <div class="product-title">Top Up All Game</div>
+            </div>
+            <div class="store-item" onclick="location.href='detile.html?product=suntik'">
+                <img src="https://pomf2.lain.la/f/qf9pb22g.jpg" alt="Suntik Sosmed">
+                <div class="product-title">Suntik Sosmed</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Optional: You can add any script here if you need to handle query parameters in detile.html
+    </script>
+</body>
+</html>

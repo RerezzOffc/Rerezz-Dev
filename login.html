@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Login Website Rerezz Official</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://pomf2.lain.la/f/96aker7k.jpeg">
+    <link rel="icon" type="image/x-icon" href="https://pomf2.lain.la/f/96aker7k.jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="aset/css/login.css">
+</head>
+<body>
+
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="aset/video.mp4" type="video/mp4">
+            Browser Anda tidak mendukung tag video.
+        </video>
+    </div>
+
+    <!-- Kolom Login -->
+    <section class="hero-section d-flex justify-content-center align-items-center">
+        <div class="container">
+            <form class="custom-form login-form" id="loginForm" role="form" method="post">
+                <h2 class="hero-title text-center mb-4 pb-2">Login Form</h2>
+                <br>
+                <div class="form-floating mb-4 p-0">
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Email address" required>
+                    <label for="email">Email address</label>
+                </div>
+
+                <div class="form-floating p-0">
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+                    <label for="password">Password</label>
+                </div>
+                
+                <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">Remember me</label>
+                </div>
+                <br><br>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-5 col-12">
+                        <button type="submit" class="form-control">Login</button>
+                    </div>
+                    <div class="col-lg-5 col-12">
+                        <a href="register.html" class="custom-btn">Register</a>
+                    </div><br>
+                    <a href="menu.html">Lewati</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <a href="https://t.me/rerez_x_hosting">
+            <p>&copy; 2024 Rerezz Official Web Developer</p>
+        </a>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+    <script src="aset/js/script.js"></script>
+
+    <!-- JavaScript untuk autentikasi login -->
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Mencegah pengiriman form default
+            
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+    
+            // Kirim data ke backend untuk autentikasi
+            fetch('http://localhost:3000/login', { // Ganti dengan URL backend Anda
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email: email, password: password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Jika login berhasil, arahkan ke menu.html
+                    window.location.href = "menu.html";
+                } else {
+                    // Tampilkan pesan error
+                    alert(data.message);
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('Terjadi kesalahan saat login.');
+            });
+        });
+    </script>
+    
+</body>
+</html>
