@@ -1,0 +1,162 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    overflow: hidden; /* Mencegah scroll saat sidebar terbuka */
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-left: 0; /* Awalnya tidak ada margin untuk konten */
+    flex: 1; /* Menggunakan flex untuk mengambil ruang yang tersedia */
+    transition: margin-left 0.3s ease; /* Transisi saat sidebar dibuka/tutup */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 14px;
+    z-index: 1;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#bg-video {
+    min-height: 100%;
+    min-width: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sidebar {
+    width: 250px;
+    background-color: rgba(156, 156, 156, 0.507);
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    transform: translateX(-100%); /* Sidebar tertutup secara default */
+}
+
+.sidebar.open {
+    transform: translateX(0); /* Sidebar terbuka */
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.menu-item {
+    padding: 10px;
+    text-align: left;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item i {
+    margin-right: 10px; /* Jarak antara ikon dan teks */
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid #fff;
+}
+
+.content.shifted {
+    margin-left: 250px; /* Konten berpindah ketika sidebar terbuka */
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px; /* Tambahkan jarak antara tautan */
+}
+
+#clock {
+    font-size: 1em; /* Ukuran font jam */
+    color: white;
+    z-index: 3;
+    margin: 10px 0; /* Margin untuk jarak vertikal */
+}
+
+.toggle-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 5px;
+}
+
+.music-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.692);
+    max-width: 300px;
+    width: 100%; /* Mengubah lebar menjadi responsif */
+}
+
+.music-cover {
+    width: 200px; /* Lebar gambar */
+    height: 200px; /* Tinggi gambar */
+    border-radius: 10px; /* Sudut membulat */
+    display: block; /* Membuat gambar sebagai blok */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Bayangan */
+    margin-bottom: 10px; /* Jarak antara gambar dan kontrol audio */
+}
+
+.audio-control-container {
+    width: 100%; /* Menyelaraskan kontrol audio dengan ukuran bingkai */
+    display: flex;
+    justify-content: center; /* Pusatkan kontrol audio */
+    align-items: center; /* Pusatkan vertikal */
+}

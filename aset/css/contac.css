@@ -1,0 +1,181 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    color: white;
+    position: relative;
+    overflow: hidden; /* Mencegah scroll pada body */
+}
+
+.video-background {
+    position: fixed; /* Menggunakan fixed untuk video */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1; /* Di belakang konten */
+}
+
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-height: 100%;
+    min-width: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+}
+
+.content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Mengubah penataan untuk gulir */
+    overflow-y: auto; /* Izinkan gulir vertikal */
+    padding: 20px; /* Tambahkan padding */
+    box-sizing: border-box; /* Pastikan padding tidak mengubah ukuran */
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #333;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    z-index: 1; /* Memastikan gambar di atas video */
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between; /* Memisahkan tombol ke kiri dan kanan */
+    width: 220px; /* Lebar kontainer tombol */
+    margin-top: 10px; /* Jarak antara tombol dan gambar profil */
+}
+
+.action-button {
+    background-color: rgba(255, 255, 255, 0.281); /* Transparan */
+    border: 2px solid rgba(255, 255, 255, 1); /* Border putih */
+    color: white;
+    padding: 10px; /* Tinggi tombol */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, border-color 0.3s;
+    width: 48%; /* Lebar tombol diatur agar tidak terlalu besar */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Glowing effect */
+}
+
+.action-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Lebih gelap saat hover */
+    border-color: rgb(255, 255, 255); /* Border lebih terang saat hover */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1); /* Glowing effect on hover */
+}
+
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 220px; /* Lebar tombol */
+    z-index: 1; /* Memastikan tombol di atas video */
+    margin-top: 20px; /* Jarak antara action buttons dan contact buttons */
+}
+
+.contact-button {
+    background-color: rgba(255, 255, 255, 0.281); /* Transparan */
+    border: 2px solid rgb(255, 255, 255); /* Border putih */
+    color: white;
+    padding: 10px; /* Tinggi tombol lebih kecil */
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, border-color 0.3s;
+    width: 100%; /* Mengatur lebar tombol menjadi 100% dari kontainer */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Glowing effect */
+}
+
+.contact-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Lebih gelap saat hover */
+    border-color: rgb(255, 255, 255); /* Border lebih terang saat hover */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1); /* Glowing effect on hover */
+}
+
+.contact-button i {
+    margin-right: 10px; /* Jarak antara ikon dan teks */
+}
+
+.skills {
+    margin-top: 20px; /* Jarak sebelum bagian keahlian */
+    width: 220px; /* Lebar kontainer keahlian */
+    text-align: left; /* Rata kiri untuk teks keahlian */
+    display: none; /* Menyembunyikan bagian keahlian */
+}
+
+.skill-item {
+    margin: 10px 0; /* Jarak antar keahlian */
+    display: flex;
+    flex-direction: column; /* Menyusun dalam kolom */
+    align-items: flex-start; /* Rata kiri untuk semua item */
+    padding: 10px;
+    border-radius: 5px; /* Sudut melengkung */
+    background-color: rgba(255, 255, 255, 0.1); /* Latar belakang transparan */
+    min-height: 70px; /* Tinggi minimum untuk setiap item */
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Border putih bersinar */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Glowing effect */
+    transition: box-shadow 0.3s; /* Animasi saat hover */
+}
+
+.skill-item:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1); /* Glowing effect on hover */
+}
+
+.skill-icon {
+    margin-right: 10px; /* Jarak antara ikon dan nama keahlian */
+    font-size: 20px; /* Ukuran ikon */
+}
+
+.skill-bar {
+    flex: 1;
+    margin-left: 10px; /* Jarak antara teks dan bar */
+    position: relative; /* Posisi relatif untuk anak */
+    width: 100%; /* Lebar bar penuh */
+}
+
+.skill-fill {
+    height: 10px;
+    border-radius: 5px; /* Sudut melengkung */
+    transition: width 0.3s; /* Animasi perubahan lebar */
+}
+
+/* Set warna untuk setiap skill */
+.skill-item:nth-child(1) .skill-fill { background: rgba(173, 216, 230, 0.8); } /* HTML - 90% */
+.skill-item:nth-child(2) .skill-fill { background: rgba(173, 216, 230, 0.75); } /* CSS - 85% */
+.skill-item:nth-child(3) .skill-fill { background: rgba(173, 216, 230, 0.8); } /* JavaScript - 80% */
+.skill-item:nth-child(4) .skill-fill { background: rgba(173, 216, 230, 0.75); } /* Python - 75% */
+.skill-item:nth-child(5) .skill-fill { background: rgba(173, 216, 230, 0.7); } /* PHP - 70% */
+.skill-item:nth-child(6) .skill-fill { background: rgba(173, 216, 230, 0.7); } /* Java - 70% */
+.skill-item:nth-child(7) .skill-fill { background: rgba(173, 216, 230, 0.6); } /* Rust - 60% */
+.skill-item:nth-child(8) .skill-fill { background: rgba(173, 216, 230, 0.65); } /* Node.js - 65% */
+.skill-item:nth-child(9) .skill-fill { background: rgba(173, 216, 230, 0.7); } /* React - 70% */
+.skill-item:nth-child(10) .skill-fill { background: rgba(173, 216, 230, 0.6); } /* Angular - 60% */
+.skill-item:nth-child(11) .skill-fill { background: rgba(173, 216, 230, 0.65); } /* Vue.js - 65% */
+.skill-item:nth-child(12) .skill-fill { background: rgba(173, 216, 230, 0.8); } /* Git - 80% */
+.skill-item:nth-child(13) .skill-fill { background: rgba(173, 216, 230, 0.6); } /* JSON - 60% */
+.skill-item:nth-child(14) .skill-fill { background: rgba(173, 216, 230, 0.85); } /* AI - 80% */
+
+.skill-percent {
+    margin-left: 10px; /* Jarak antara bar dan persentase */
+    color: white; /* Warna teks persentase */
+}
+
+.divider {
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    margin: 5px 0; /* Jarak antara garis dan elemen lainnya */
+    width: 100%; /* Lebar garis pemisah */
+}
