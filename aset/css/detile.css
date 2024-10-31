@@ -1,0 +1,91 @@
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            color: white;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+            height: 100vh;
+            margin: 0;
+        }
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .product-title {
+            font-size: 28px;
+            margin: 30px 0 10px; /* Menambahkan margin atas */
+        }
+        .product-description {
+            font-size: 18px;
+            margin: 10px 0 20px; /* Menambahkan margin atas */
+        }
+        .detail-columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .detail-column {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 1);
+            border-radius: 10px;
+            padding: 10px;
+            width: 90%;
+            max-width: 200px;
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .detail-column:hover {
+            transform: scale(1.05);
+        }
+        img {
+            width: 80%;
+            height: auto;
+            border-radius: 10px;
+        }
+        h3 {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .price {
+            font-size: 14px;
+            color: white;
+            margin: 5px 0;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px;
+            background-color: rgba(255, 255, 1);
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            z-index: 1;
+        }
+        .back-button:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
