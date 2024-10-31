@@ -1,37 +1,27 @@
-
 function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    const content = document.getElementById('content');
-    const buttonIcon = document.querySelector('.toggle-button i');
-
-    if (sidebar.classList.contains('open')) {
-        sidebar.classList.remove('open');
-        content.classList.remove('shifted');
-        buttonIcon.classList.remove('fa-times');
-        buttonIcon.classList.add('fa-bars');
-    } else {
-        setTimeout(() => {
-            sidebar.classList.add('open');
-            content.classList.add('shifted');
-            buttonIcon.classList.remove('fa-bars');
-            buttonIcon.classList.add('fa-times');
-        }, 150); // Delay 150ms untuk membuka sidebar
-    }
-}
-setInterval(updateClock, 1000);
-    updateClock();
-
-    var modal = document.getElementById("myModal");
-    var menuIcon = document.getElementById("menuIcon");
-    var span = document.getElementsByClassName("close")[0];
-    menuIcon.onclick = function() {
-        modal.style.display = "block";
-    }
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-    window.onclick = function(event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
+            document.getElementById("sidebar").classList.toggle("open");
         }
-    }
+
+        function updateClock() {
+            const clockElement = document.getElementById('clock');
+            const now = new Date();
+
+            const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+            const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+
+            const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+            const wibTime = new Date(utc + (3600000 * 7));
+
+            const dayName = days[wibTime.getDay()];
+            const day = String(wibTime.getDate()).padStart(2, '0');
+            const month = months[wibTime.getMonth()];
+            const year = wibTime.getFullYear();
+            const hours = String(wibTime.getHours()).padStart(2, '0');
+            const minutes = String(wibTime.getMinutes()).padStart(2, '0');
+            const seconds = String(wibTime.getSeconds()).padStart(2, '0');
+
+            clockElement.innerHTML = `<p>${dayName} ${day} ${month} ${year}</p><p>${hours}:${minutes}:${seconds} WIB</p>`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
